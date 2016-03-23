@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:17:59 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:17:59 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = 0;
+		i++;
+	}
 }

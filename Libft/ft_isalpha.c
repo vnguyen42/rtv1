@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:10:37 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:15:35 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+int	ft_isalpha(int c)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
 	return (0);
 }

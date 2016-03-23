@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/15 15:53:42 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/18 15:14:24 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/23 16:57:49 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/23 17:07:41 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_fdf.h"
+#include "ft_rtv1.h"
 
 void	clear_screen(t_env *env)
 {
@@ -30,4 +30,20 @@ void	clear_screen(t_env *env)
 		}
 		p.y++;
 	}
+}
+
+void        pixel_to_image(unsigned long color, t_env *val, int x, int y)
+{
+	char    *image;
+	int     bpp;
+	int     size_line;
+	int     endian;
+
+	image = mlx_get_data_addr(val->img, &bpp, &size_line, &endian);
+	val->r = ((color & 0xFF0000) >> 16);
+	val->g = ((color & 0xFF00) >> 8);
+	val->b = ((color & 0xFF));
+	image[x * bpp / 8 + y * size_line] = val->b;
+	image[x * bpp / 8 + 1 + y * size_line] = val->g;
+	image[x * bpp / 8 + 2 + y * size_line] = val->r;
 }

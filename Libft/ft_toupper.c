@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:15:19 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:15:26 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+int	ft_toupper(int c)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:14:54 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:17:07 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+char	*ft_strrchr(const char *s, int c)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	int a;
+
+	a = ft_strlen((char *)s);
+	while (a != 0 && s[a] != (char)c)
+		a--;
+	if (s[a] == (char)c)
+		return ((char *)&s[a]);
+	return (NULL);
 }

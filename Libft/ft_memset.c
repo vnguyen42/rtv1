@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:12:30 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:17:24 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	size_t				a;
+	unsigned	char	*tab;
+
+	a = 0;
+	tab = (unsigned char *)b;
+	while (a < len)
+	{
+		tab[a] = (unsigned char)c;
+		a++;
+	}
+	return (tab);
 }

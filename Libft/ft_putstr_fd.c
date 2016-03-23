@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:13:18 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:16:40 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
+#include <unistd.h>
 
-int		main(int argc, char **argv)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	int a;
+
+	a = 0;
+	if (s != NULL)
+	{
+		while (s[a])
+		{
+			write(fd, &s[a], 1);
+			a++;
+		}
+	}
 }

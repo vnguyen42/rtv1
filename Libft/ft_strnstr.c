@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:14:49 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:17:06 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	size_t	i;
+	size_t	len;
+
+	if (s1 == NULL || s2 == NULL || n == 0)
+		return (NULL);
+	len = ft_strlen(s2);
+	if (n < len)
+		return (NULL);
+	i = 0;
+	if (s2[i] == '\0')
+		return ((char *)s1);
+	while (s1[i] != '\0' && i <= (n - len))
+	{
+		if (ft_strncmp(&s1[i], s2, len) == 0)
+			return ((char*)&s1[i]);
+		i++;
+	}
+	return (NULL);
 }

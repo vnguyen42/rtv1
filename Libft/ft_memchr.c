@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:11:57 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:16:19 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	unsigned char		*ss;
+	size_t				a;
+	unsigned char		stop;
+
+	a = 0;
+	stop = (unsigned char)c;
+	ss = (unsigned char*)s;
+	while (n--)
+	{
+		if (ss[a] == stop)
+			return (ss + a);
+		a++;
+	}
+	return (NULL);
 }

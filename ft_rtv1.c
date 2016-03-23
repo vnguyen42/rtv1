@@ -6,13 +6,12 @@
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 16:47:34 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 16:48:32 by vnguyen          ###   ########.fr       */
+/*   Updated: 2016/03/23 17:04:55 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "read_grid.h"
 #include "mlx.h"
-#include "ft_fdf.h"
+#include "ft_rtv1.h"
 #include <unistd.h>
 
 int		ft_translucid(void *param)
@@ -25,6 +24,7 @@ int		ft_translucid(void *param)
 
 void	init_env_vars(t_env *env)
 {
+	(void)(env);
 }
 
 int		init_rtv1()

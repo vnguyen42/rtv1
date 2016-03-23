@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:13:34 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:16:43 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+void	ft_strclr(char *s)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	int a;
+
+	a = 0;
+	if (s != NULL)
+	{
+		if (s[a] != '\0')
+		{
+			while (s[a])
+			{
+				s[a] = '\0';
+				a++;
+			}
+		}
+	}
 }

@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:13:54 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:16:48 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_rtv1.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
+	int a;
+	int b;
+
+	a = 0;
+	b = 0;
+	if (s1 != NULL && s2 != NULL)
+	{
+		while (s1[a] || s2[a])
+		{
+			if (s1[a] == s2[a])
+				b++;
+			a++;
+		}
+		if (a == b)
+			return (1);
+	}
 	return (0);
 }

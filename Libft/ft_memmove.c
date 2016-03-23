@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/17 19:40:04 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:29 by vnguyen          ###   ########.fr       */
+/*   Created: 2016/03/14 17:12:26 by vnguyen           #+#    #+#             */
+/*   Updated: 2016/03/14 17:16:33 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-#include "ft_rtv1.h"
 
-int		main(int argc, char **argv)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	(void)(argc);
-	(void)(argv);
-	init_rtv1();
-	return (0);
+	unsigned char	*s;
+
+	if (dst == '\0' || src == '\0')
+		return (NULL);
+	s = (unsigned char*)malloc(sizeof(*s) * len);
+	if (s == NULL)
+		return (dst);
+	ft_memcpy(s, src, len);
+	ft_memcpy(dst, s, len);
+	free(s);
+	return (dst);
 }
