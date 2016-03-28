@@ -6,7 +6,7 @@
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 16:57:23 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:05:23 by vnguyen          ###   ########.fr       */
+/*   Updated: 2016/03/23 17:11:13 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int		ft_key_handler(int keycode, void *param)
 
 	env = param;
 	printf("keycode: %d\n", keycode);
+	if (keycode == 53)
+		exit(0);
 	return (1);
 }

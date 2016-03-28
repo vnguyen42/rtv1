@@ -6,11 +6,11 @@
 #    By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/17 19:27:32 by vnguyen           #+#    #+#              #
-#    Updated: 2016/03/23 16:58:10 by vnguyen          ###   ########.fr        #
+#    Updated: 2016/03/28 18:37:51 by vnguyen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fdf
+NAME = rtv1
 
 SRC_PATH = ./
 
@@ -26,7 +26,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 CC = gcc 
 
-SRC_NAME = main.c ft_rtv1.c ft_event.c ft_graph_utils.c ft_graph.c
+SRC_NAME = main.c ft_rtv1.c ft_event.c ft_graph_utils.c ft_graph.c ft_collision.c
 
 OBJ_NAME = $(SRC:.c=.o)
 

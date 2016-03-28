@@ -6,7 +6,7 @@
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 16:47:34 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:04:55 by vnguyen          ###   ########.fr       */
+/*   Updated: 2016/03/23 17:11:23 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		init_rtv1()
 	mlx_do_key_autorepeaton(&env);
 	init_env_vars(&env);
 	mlx_loop_hook(env.mlx, ft_translucid, &env);
-	//mlx_key_hook(env.win, ft_key_handler, &env);
+	mlx_key_hook(env.win, ft_key_handler, &env);
 	mlx_loop(env.mlx);
 	return (1);
 }
