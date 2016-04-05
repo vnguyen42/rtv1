@@ -6,7 +6,7 @@
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 16:47:34 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/03/23 17:11:23 by vnguyen          ###   ########.fr       */
+/*   Updated: 2016/04/05 13:00:30 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		ft_translucid(void *param)
 	t_env *env;
 
 	env = param;
+	draw_grid(env, 1);
 	return (1);
 }
 
