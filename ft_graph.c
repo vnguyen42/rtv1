@@ -6,7 +6,7 @@
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 16:58:26 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/04/06 17:27:20 by vnguyen          ###   ########.fr       */
+/*   Updated: 2016/04/06 17:38:05 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int		ray_calculator(t_rtv1 *k)
 	k->temp = vector_dot(&k->n, &k->n);
 	if (k->temp == 0)
 		return (0);
-	k->current_mat = k->spheres[k->current_sphere].material;
+	k->current_mat = k->materials[k->spheres[k->current_sphere].material];
 	return (1);
 }
 

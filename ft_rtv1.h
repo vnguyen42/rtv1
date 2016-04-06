@@ -6,7 +6,7 @@
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 17:00:47 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/04/06 17:26:43 by vnguyen          ###   ########.fr       */
+/*   Updated: 2016/04/06 17:39:12 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef struct      s_sphere
 {
 	t_vector    pos;
 	float       radius;
-	t_material  material;
+	int			material;
 }                   t_sphere;
 
 typedef struct		s_env
