@@ -6,7 +6,7 @@
 /*   By: vnguyen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 17:00:47 by vnguyen           #+#    #+#             */
-/*   Updated: 2016/04/05 12:59:00 by vnguyen          ###   ########.fr       */
+/*   Updated: 2016/04/06 17:26:43 by vnguyen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,6 @@ typedef struct		s_irs
 	float			t1;
 }					t_irs;
 
-typedef struct		s_sphere
-{
-	t_vector	pos;
-	float		radius;
-}					t_sphere;
-
 typedef struct		s_color
 {
 	float r;
@@ -83,6 +77,13 @@ typedef struct		s_material
 	t_color	diffuse;
 	float	reflection;
 }					t_material;
+
+typedef struct      s_sphere
+{
+	t_vector    pos;
+	float       radius;
+	t_material  material;
+}                   t_sphere;
 
 typedef struct		s_env
 {
@@ -134,9 +135,11 @@ int					ft_key_handler(int keycode, void *param);
 void				pixel_to_image(unsigned long color, t_env *val,
 		int x, int y);
 void				clear_screen(t_env *env);
-int					intersect_ray_sphere(t_ray *r, t_sphere *s);
+int					intersect_ray_sphere(t_ray *r, t_sphere *s, float t);
 t_vector			vector_sub(t_vector *v1, t_vector *v2);
 float				vector_dot(t_vector *v1, t_vector *v2);
+t_vector			vector_scale(float c, t_vector *v);
+t_vector			vector_add(t_vector *v1, t_vector *v2);
 void				draw_scene(t_env *env, int clear);
 void				init_scene_1(t_rtv1 *k);
 
